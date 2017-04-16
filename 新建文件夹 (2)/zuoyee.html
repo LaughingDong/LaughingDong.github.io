@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超链接样式测试</title>
+	<style>
+	body{
+		padding:0;
+		margin:0;
+	}
+	html{
+		box-sizing:border-box;
+	}
+	h1{
+		text-align: center;
+	}
+	*,*::after,*::before{
+		box-sizing:inherit;
+	}
+	.clearfix::after{
+		content: ""；
+		display：block;
+		clear: both;
+	}
+     header,footer{
+     	border:1px solid  #00FFF3;
+     	height: 400px;
+     	margin: 1% 0;
+     }
+     #center{
+     	width: 1900px;
+     	margin: auto；
+     }
+     aside{
+     	width: 60%;
+     	min-height: 250px;
+     	border:1px solid  #00FFF3;
+     	float: left;
+     }
+     main{
+     	border: 1px solid  #00FFF3;
+     	width: 30%;
+     	float: left;
+     	margin:0 0 0 2%;
+     	min-height: 250px;
+     }
+     div#header-link{
+   border: 1px solid 	red;
+   width: 200px;
+   padding: 20px;
+   margin: 30px 50px;
+   float: left;
+}
+a:link{
+	color: greenyellow;
+}
+a:hover{
+	color: #00FFFF;
+}
+a:active{
+	color: darkblue;
+}
+	</head>
+	</style>
+</head>
+<body>
+	<h1>网页布局测试网页布局测试</h1>
+	<div id="center">
+		<header>
+		<div id="center">
+			<header>
+              <a href="//www.taobao.com">
+              	<div id="header-link">测试链接</div>
+              </a>
+              <a href="//www.taobao.com">
+              	<div id="header-link">测试链接</div>
+              </a>
+              <a href="//www.taobao.com">
+              	<div id="header-link">测试链接</div>
+              </a>
+              <a href="//www.taobao.com">
+              	<div id="header-link">测试链接</div>
+              </a>
+              <a href="//www.taobao.com">
+              	<div id="header-link">测试链接</div>
+              </a>
+              <a href="//www.taobao.com">
+              	<div id="header-link">测试链接</div>
+              </a>
+		</header>
+		<section class="clearfix">
+			<aside>aside</aside>
+			<main>main</main>
+		</section>
+		<footer>footer</footer>
+	</div>
+</body>
+</html>
