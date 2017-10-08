@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.conter{
+				width:800px;
+				height:350px;
+				margin: 0 auto;
+			}
+			.conter h1{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="conter">
+			<h1>抽奖系统</h1>
+			
+			第一名： <input type="text" class="text" value="" disabled="disabled"/>
+			<br />
+			第二名： <input type="text" class="text" value="" disabled="disabled"/><input type="text" class="text" value="" disabled="disabled"/>
+			<br />
+			第三名： <input type="text" class="text" value="" disabled="disabled"/><input type="text" class="text" value="" disabled="disabled"/><input type="text" class="text" value="" disabled="disabled"/>
+			
+			<input type="button" id="btn" value="抽奖" />
+		</div>
+		<script type="text/javascript">
+			var oTexts = document.getElementsByClassName("text"),
+				obtn   = document.getElementById("btn"),
+				nums = 45,
+				Number = [];
+			btn.addEventListener("click",draw);
+			function draw(){
+				for(var i=0;i<6;i++)
+				{
+					Number[i]=Math.floor(Math.random()*nums+1);
+					for(var j=0;j<i;j++)
+					{
+						if(Number[i]==Number[j])
+							i--;
+					}
+				}
+				for(var i=0;i<6;i++){
+					oTexts[i].value=Number[i];
+				}
+			}
+			
+		</script>
+	</body>
+</html>
