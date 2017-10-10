@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>模拟时钟</title>
+		<style>
+			.clock{
+				width: 400px;
+				height: 400px;
+				background: url(img/clock.jpg);
+				background-size: 100% 100%;
+				position: relative center;
+			}
+			.hour{
+				width: 4px;
+				height: 80px;
+				background-color: blue;
+				transform-origin: bottom center;
+				position: absolute;
+				left: 200px;
+				top: 120px;
+			}
+			.minute{
+				width: 3px;
+				height: 100px;
+				background-color: darkgreen;
+				transform-origin: bottom center;
+				position: absolute;
+				left: 200px;
+				top: 100px;
+			}
+			.second{
+				width: 2px;
+				height:120px;
+				background-color: #f00;
+				transform-origin: bottom center;
+				position: absolute;
+				left: 200px;
+				top: 80px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="clock">
+			<div class="hour"></div>
+			<div class="minute"></div>
+			<div class="second"></div>
+		</div>
+		<script type="text/javascript">
+			var now=new Date();
+			var hou,min,sec;
+			var oClock=document.querySelector('.clock');
+			var ohour=document.querySelector('.hour');
+			var ominute=document.querySelector('.minute');
+			var osecond=document.querySelector('.second');
+			function refresh() {
+				now=new Date();
+				hou=now.getHours()+now.getMinutes()/60;
+				min=now.getMinutes()+now.getSeconds()/60;
+				sec=now.getSeconds();
+				ohour.style.transform="rotate("+hou*30+"deg)";
+				ominute.style.transform="rotate("+min*6+"deg)";
+				osecond.style.transform="rotate("+sec*6+"deg)";
+			}
+			setInterval(refresh,1000);
+		</script>
+	</body>
+
+</html>
