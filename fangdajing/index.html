@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		#zoom{
+			width: 500px;
+		    position: absolute;
+			left: 500px;
+			top: 100px;
+			overflow: hidden;
+		}
+		#zoom #zoomer{
+			position: absolute;	
+			width: 100px;
+			height: 100px;
+			left: 0px;
+			top: 0px;
+			border-radius: 50px;
+			background: url(img/2.jpg) no-repeat;
+			margin-left: -50px;
+			margin-top: -50px;
+			pointer-events: none;
+		}
+		img{
+			width: 100%;
+		}
+		}
+	</style>
+	<body>
+		<div id="zoom">
+			<img src="img/2.jpg"/>
+			<div id="zoomer">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var ozoom=document.getElementById("zoom");
+			var ozoomer=document.getElementById("zoomer");
+			var img=ozoom.querySelector("img");
+			var ratio;
+			img.addEventListener("load",function() {
+				ratio=img.naturalWidth/img.width;
+				console.log(ratio);
+			});
+			document.addEventListener("mousemove",function () {
+				var x=event.offsetX||event.clientX;
+				var y=event.offsetY||event.clientY;
+				ozoomer.style.left=x+"px";
+				ozoomer.style.top=y+"px";
+				ozoomer.style.backgroundPosition=(-ratio*x+50)+"px "+(-ratio*y+50)+"px";
+			});
+		</script>
+	</body>
+</html>
